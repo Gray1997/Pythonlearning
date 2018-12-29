@@ -1,0 +1,90 @@
+from tkinter import *
+top = Tk()
+top.title('Simple Caculator')
+button = []
+
+for i in range(2):
+    str1 = (str)(i)
+    button.append([])
+    button[i] = Button(text=str1)
+    button[i].pack(side=LEFT)
+mainloop()
+from tkinter import *
+def onclick():
+    print('hello')
+def onclick2():
+    label['text'] = 'hello'
+label = Label(text = 'This is a label')
+label.pack()
+btn = Button()
+top = Tk()
+btn['text'] = 'click me.'
+btn['command'] = onclick
+btn.pack(side = LEFT, fill = X)
+
+btn2 = Button()
+btn2['text'] = 'click me too.'
+btn2['command'] = onclick2
+btn2.pack(fill = X, side=RIGHT, padx=50, expand=True)
+
+
+mainloop()
+
+from tkinter import *
+from tkinter.scrolledtext import ScrolledText
+
+def load():
+    with open(filename.get()) as f:
+        contents.delete('1.0', END)
+        contents.insert(INSERT, f.read())
+        
+def saved():
+    with open(filename.get(), 'w') as f:
+        file.write(contents.get('1.0', END))
+top = Tk()
+top.title("Simple text editor")
+contents = ScrolledText()
+contents.pack(side=BOTTOM, expand=True, fill=BOTH)
+
+filename = Entry()
+filename.pack(side=LEFT, expand=True, fill=X)
+button_open = Button(text='Open')
+button_open.pack(side=LEFT)
+button_open['command'] = load
+
+button_save = Button(text='Save')
+button_save.pack(side=LEFT)
+button_save['command'] = saved
+
+mainloop()
+from tkinter import *
+top = Tk()
+top.title('Simple Caculator')
+def onclick():
+    pass
+result = Label(text='This is result')
+result.grid(row=1, column=1, columnspand=4)
+
+button_div = Button(text='/')
+button_div.grid(row=2, column=4)
+
+button_1 = Button(text='1')
+button_1.grid(row=2, column=1)
+button_2 = Button(text='2')
+button_2.grid(row=2, column=2)
+button_3 = Button(text='3')
+button_3.grid(row=2, column=3)
+button_4 = Button(text='4')
+button_4.grid(row=3, column=1)
+button_5 = Button(text='5')
+button_5.grid(row=3, column=2)
+button_6 = Button(text='6')
+button_6.grid(row=3, column=3)
+button_7 = Button(text='7')
+button_7.grid(row=4, column=1)
+button_8 = Button(text='8')
+button_8.grid(row=4, column=2)
+button_9 = Button(text='9')
+button_9.grid(row=4, column=3)
+button_0 = Button(text='0')
+button_0.grid(row=5, column=1)
